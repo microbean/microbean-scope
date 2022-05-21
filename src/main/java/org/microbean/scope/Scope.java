@@ -45,35 +45,36 @@ public final class Scope implements Constable, ScopeMember {
    * Static fields.
    */
 
-  
-  public static final Scope SINGLETON;
 
-  static {
-    final Qualifier<?, ?> id = Qualifier.of("jakarta.inject.Singleton");
-    SINGLETON = Scope.of(id, false, id);
-  }
+  public static final Qualifier<?> SINGLETON_ID = Qualifier.of("Singleton");
+
+  public static final Scope SINGLETON = Scope.of(SINGLETON_ID, false, SINGLETON_ID);
+
+  public static final Qualifier<?> NONE_ID = Qualifier.of("None");
+
+  public static final Scope NONE = Scope.of(NONE_ID, false, SINGLETON_ID);
 
 
   /*
    * Instance fields.
    */
 
-  
-  private final Qualifier<?, ?> id;
+
+  private final Qualifier<?> id;
 
   private final boolean normal;
 
-  private final Qualifier<?, ?> governingScopeId;
+  private final Qualifier<?> governingScopeId;
 
 
   /*
    * Constructors.
    */
 
-  
-  private Scope(final Qualifier<?, ?> id,
+
+  private Scope(final Qualifier<?> id,
                 final boolean normal,
-                final Qualifier<?, ?> governingScopeId) {
+                final Qualifier<?> governingScopeId) {
     super();
     this.id = Objects.requireNonNull(id, "id");
     this.normal = normal;
@@ -85,8 +86,8 @@ public final class Scope implements Constable, ScopeMember {
    * Instance methods.
    */
 
-  
-  public final Qualifier<?, ?> id() {
+
+  public final Qualifier<?> id() {
     return this.id;
   }
 
@@ -95,7 +96,7 @@ public final class Scope implements Constable, ScopeMember {
   }
 
   @Override // ScopeMember
-  public final Qualifier<?, ?> governingScopeId() {
+  public final Qualifier<?> governingScopeId() {
     return this.governingScopeId;
   }
 
@@ -160,9 +161,9 @@ public final class Scope implements Constable, ScopeMember {
    * Static methods.
    */
 
-  
+
   // This method is referenced by the describeConstable() method.
-  public static final Scope of(final Qualifier<?, ?> id, final boolean normal, final Qualifier<?, ?> governingScopeId) {
+  public static final Scope of(final Qualifier<?> id, final boolean normal, final Qualifier<?> governingScopeId) {
     return new Scope(id, normal, governingScopeId);
   }
 

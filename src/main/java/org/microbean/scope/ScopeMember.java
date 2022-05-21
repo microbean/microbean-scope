@@ -22,9 +22,9 @@ import org.microbean.qualifier.Qualifier;
 
 public interface ScopeMember {
 
-  public Qualifier<?, ?> governingScopeId();
+  public Qualifier<?> governingScopeId();
 
-  public default boolean governedBy(final Qualifier<?, ?> governingScopeId) {
+  public default boolean governedBy(final Qualifier<?> governingScopeId) {
     return Objects.equals(this.governingScopeId(), governingScopeId);
   }
   
