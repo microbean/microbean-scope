@@ -9,13 +9,13 @@
   <parent>
     <groupId>org.microbean</groupId>
     <artifactId>microbean-pluginmanagement-pom</artifactId>
-    <version>18</version>
+    <version>21</version>
     <relativePath />
   </parent>
 
   <name>microBean™ Type</name>
   <description>microBean™ Scope: Utility classes for implementing scopes.</description>
-  <inceptionYear>2020</inceptionYear>
+  <inceptionYear>2022</inceptionYear>
   <url>https://microbean.github.io/microbean-scope</url>
 
   <scm>
@@ -35,14 +35,7 @@
       <dependency>
         <groupId>org.microbean</groupId>
         <artifactId>microbean-qualifier</artifactId>
-        <version>0.2.1</version>
-        <type>jar</type>
-      </dependency>
-
-      <dependency>
-        <groupId>org.microbean</groupId>
-        <artifactId>microbean-development-annotations</artifactId>
-        <version>0.2.12</version>
+        <version>0.2.2</version>
         <type>jar</type>
       </dependency>
 
@@ -59,13 +52,6 @@
     <dependency>
       <groupId>org.microbean</groupId>
       <artifactId>microbean-qualifier</artifactId>
-      <type>jar</type>
-      <scope>compile</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.microbean</groupId>
-      <artifactId>microbean-development-annotations</artifactId>
       <type>jar</type>
       <scope>compile</scope>
     </dependency>
@@ -96,16 +82,6 @@
       <plugins>
 
         <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <configuration>
-            <compilerArgs>
-              <arg>-Xlint:all</arg>
-              <arg>-Xlint:-preview</arg>
-              <arg>-Xpkginfo:always</arg>
-            </compilerArgs>
-          </configuration>
-        </plugin>
-        <plugin>
           <artifactId>maven-javadoc-plugin</artifactId>
           <configuration>
             <additionalOptions>
@@ -114,10 +90,6 @@
             </additionalOptions>
             <docfilessubdirs>true</docfilessubdirs>
           </configuration>
-        </plugin>
-        <plugin>
-          <artifactId>maven-scm-publish-plugin</artifactId>
-          <version>3.1.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
