@@ -46,11 +46,13 @@ public record Scope(NamedAttributeMap<?> id, boolean normal, NamedAttributeMap<?
    */
 
 
-  public static final NamedAttributeMap<?> SINGLETON_ID = NamedAttributeMap.of("Singleton", Map.of(), Map.of(), List.of());
+  private static final NamedAttributeMap<?> SCOPE = NamedAttributeMap.of("Scope", Map.of(), Map.of(), List.of());
+
+  public static final NamedAttributeMap<?> SINGLETON_ID = NamedAttributeMap.of("Singleton", Map.of(), Map.of(), List.of(SCOPE));
 
   public static final Scope SINGLETON = Scope.of(SINGLETON_ID, false, SINGLETON_ID);
 
-  public static final NamedAttributeMap<?> NONE_ID = NamedAttributeMap.of("None", Map.of(), Map.of(), List.of());
+  public static final NamedAttributeMap<?> NONE_ID = NamedAttributeMap.of("None", Map.of(), Map.of(), List.of(SCOPE));
 
   public static final Scope NONE = Scope.of(NONE_ID, false, SINGLETON_ID);
 
@@ -102,5 +104,6 @@ public record Scope(NamedAttributeMap<?> id, boolean normal, NamedAttributeMap<?
   public static final Scope of(final NamedAttributeMap<?> id, final boolean normal, final NamedAttributeMap<?> governingScopeId) {
     return new Scope(id, normal, governingScopeId);
   }
+
 
 }
