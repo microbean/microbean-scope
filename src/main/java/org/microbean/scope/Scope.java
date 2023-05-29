@@ -46,7 +46,9 @@ public record Scope(NamedAttributeMap<?> id, boolean normal, NamedAttributeMap<?
    */
 
 
-  private static final NamedAttributeMap<?> SCOPE = NamedAttributeMap.of("Scope", Map.of(), Map.of(), List.of());
+  private static final NamedAttributeMap<?> QUALIFIER = NamedAttributeMap.of("Qualifier", Map.of(), Map.of(), List.of());
+
+  private static final NamedAttributeMap<?> SCOPE = NamedAttributeMap.of("Scope", Map.of(), Map.of(), List.of(QUALIFIER));
 
   public static final NamedAttributeMap<?> SINGLETON_ID = NamedAttributeMap.of("Singleton", Map.of(), Map.of(), List.of(SCOPE));
 
