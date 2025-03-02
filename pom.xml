@@ -4,7 +4,7 @@
 
   <groupId>org.microbean</groupId>
   <artifactId>microbean-scope</artifactId>
-  <version>0.0.4-SNAPSHOT</version>
+  <version>0.0.4</version>
 
   <name>microBean™ Scope</name>
   <description>microBean™ Scope: Utility classes for implementing scopes.</description>
@@ -43,7 +43,7 @@
     <connection>${scm.url}</connection>
     <developerConnection>${scm.url}</developerConnection>
     <url>https://github.com/microbean/microbean-scope/</url>
-    <tag>HEAD</tag>
+    <tag>v0.0.4</tag>
   </scm>
 
   <issueManagement>
