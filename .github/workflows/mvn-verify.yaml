@@ -22,9 +22,9 @@ jobs:
         with:
           cache: 'maven'
           distribution: 'temurin'
-          java-version: '17'
-          mvn-toolchain-id: 'Temurin 17'
+          java-version: '23'
+          mvn-toolchain-id: 'Temurin 23'
           mvn-toolchain-vendor: 'openjdk' # see ../../pom.xml
       - id: 'mvn-verify'
         name: 'Step: Maven Verify'
-        run: 'mvn --batch-mode --color never --errors --no-transfer-progress -Dorg.slf4j.simpleLogger.defaultLogLevel=info verify'
+        run: './mvnw --batch-mode --color never --errors --no-transfer-progress -Dorg.slf4j.simpleLogger.defaultLogLevel=info verify'
